@@ -1,0 +1,23 @@
+name = "cf-bug-repro"
+type = "webpack"
+account_id = "accountID"
+workers_dev = false
+route = "https://cf-bug-repro.workerocean.com/*"
+zone_id = "id"
+webpack_config = "webpack.config.js"
+
+# staging environment configuration
+[env.staging]
+name = "cf-bug-repro-staging"
+route = "https://cf-bug-repro-staging.workerocean.com/*"
+kv-namespaces = [
+    { binding = "CFBUG", id = "staging-cfkv" }
+]
+
+# production environment configuration
+[env.production]
+name = "cf-bug-repro-production"
+route = "https://cf-bug-repro-prod.workerocean.com/*"
+kv-namespaces = [
+    { binding = "CFBUG", id = "prod-cfkv" }
+]
